@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+* { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: #f2f2f7; overscroll-behavior: none; -webkit-font-smoothing: antialiased; }
+#root { min-height: 100svh; }
+input, textarea { outline: none; font-family: inherit; }
+::-webkit-scrollbar { display: none; }
