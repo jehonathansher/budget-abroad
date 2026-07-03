@@ -229,12 +229,12 @@ function InlineCategoryEditor({ cat, homeCurrency, foreignCurrency, onSave, onDe
         </div>
 
         <div className="overflow-y-auto flex-1 px-4 pb-8 flex flex-col gap-3">
-          {/* Preview */}
+          {/* Name + preview combined */}
           <div className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: color + '20' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: color + '20' }}>
               <span style={{ color }} className="text-lg">{emojiIcon(iconName)}</span>
             </div>
-            <p className="font-semibold">{name || 'Category'}</p>
+            <input value={name} onChange={e => setName(e.target.value)} placeholder="Category name" className="flex-1 bg-transparent font-semibold text-base" />
           </div>
 
           {/* Budget cap */}
@@ -263,9 +263,7 @@ function InlineCategoryEditor({ cat, homeCurrency, foreignCurrency, onSave, onDe
             )}
           </div>
 
-          <Field label="Name">
-            <input value={name} onChange={e => setName(e.target.value)} className="w-full bg-transparent text-sm py-1" />
-          </Field>
+
 
           {/* Icons */}
           <div className="bg-white rounded-2xl px-4 py-3">

@@ -39,18 +39,17 @@ export default function CategoryEditorSheet({ cat, trip, onSave, onDelete, onClo
         </div>
 
         <div className="overflow-y-auto flex-1 px-4 pb-8 flex flex-col gap-3">
-          {/* Preview */}
+          {/* Name + preview combined */}
           <div className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg" style={{ background: color + '20' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0" style={{ background: color + '20' }}>
               {emojiIcon(iconName)}
             </div>
-            <p className="font-semibold">{name || 'Category Name'}</p>
-          </div>
-
-          {/* Name */}
-          <div className="bg-white rounded-2xl px-4 py-3">
-            <p className="text-xs text-gray-400 mb-1">Name</p>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Category name" className="w-full bg-transparent text-sm font-medium" />
+            <input
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="Category name"
+              className="flex-1 bg-transparent font-semibold text-base"
+            />
           </div>
 
           {/* Budget cap */}

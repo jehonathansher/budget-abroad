@@ -5,3 +5,6 @@ body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Displa
 #root { min-height: 100svh; }
 input, textarea { outline: none; font-family: inherit; }
 ::-webkit-scrollbar { display: none; }
+
+/* Prevent iOS zoom on input focus */
+input, textarea, select { font-size: 16px !important; }

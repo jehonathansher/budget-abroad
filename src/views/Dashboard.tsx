@@ -1,12 +1,18 @@
 import { useState } from 'react'
-import { Plus, Plane, Trash2 } from 'lucide-react'
+import { Plus, Plane, Trash2, Cloud, CloudOff } from 'lucide-react'
 import { useApp, tripRemainingBudget, tripTotalSpentHome } from '../store'
 import type { Trip } from '../types'
+import type { SyncStatus } from '../cloudSync'
 import NewTripSheet from '../components/NewTripSheet'
 
-interface Props { onSelectTrip: (id: string) => void }
+interface Props {
+  onSelectTrip: (id: string) => void
+  onOpenSync: () => void
+  syncStatus: SyncStatus
+  syncEnabled: boolean
+}
 
-export default function Dashboard({ onSelectTrip }: Props) {
+export default function Dashboard({ onSelectTrip, onOpenSync, syncStatus, syncEnabled }: Props) {
   const { trips, deleteTrip } = useApp()
   const [showNew, setShowNew] = useState(false)
   const [deletingId, setDeletingId] = useState<string | null>(null)
@@ -14,8 +20,14 @@ export default function Dashboard({ onSelectTrip }: Props) {
   return (
     <div className="min-h-svh bg-[#f2f2f7]">
       {/* Header */}
-      <div className="px-5 pt-14 pb-4">
+      <div className="px-5 pt-14 pb-4 flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900">My Trips</h1>
+        <button onClick={onOpenSync} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white shadow-sm text-sm font-medium">
+          {syncEnabled
+            ? <><Cloud size={15} className={syncStatus === 'syncing' ? 'text-blue-400 animate-pulse' : 'text-green-500'} /> Sync</>
+            : <><CloudOff size={15} className="text-gray-400" /> Sync</>
+          }
+        </button>
       </div>
 
       {trips.length === 0 ? (
