@@ -8,8 +8,8 @@
  * every build — the version, so a new deploy gets a fresh cache, and the list
  * of hashed JS/CSS files, so the app is fully offline after its first load
  * rather than only after a second visit. */
-const CACHE = 'budget-abroad-e5830ff4'
-const ASSETS = ["./assets/favicon-HV1kWBx1.svg","./assets/icon-180-DdsUQNjL.png","./assets/index-CpXJoUoW.js","./assets/index-DUiV7Yu9.css","./assets/manifest-Cu_DhutZ.webmanifest"]
+const CACHE = 'budget-abroad-9ea66ecf'
+const ASSETS = ["./assets/index-BRIReMEJ.css","./assets/index-CQGifYyQ.js"]
 
 const SHELL = ['./', './index.html', './manifest.webmanifest', './favicon.svg', './icons/icon-180.png', ...ASSETS]
 
