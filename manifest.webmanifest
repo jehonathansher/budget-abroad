@@ -1,0 +1,17 @@
+{
+  "name": "Budget Abroad",
+  "short_name": "Budget",
+  "description": "Trip budget tracking in two currencies, offline.",
+  "id": "/budget-abroad/",
+  "start_url": "/budget-abroad/",
+  "scope": "/budget-abroad/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F2F7",
+  "theme_color": "#F2F2F7",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
