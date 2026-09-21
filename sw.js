@@ -4,8 +4,14 @@
  *
  * Bump CACHE when this file changes; old caches are dropped on activate.
  */
-const CACHE = 'budget-abroad-v1'
-const SHELL = ['./', './index.html', './manifest.webmanifest', './favicon.svg', './icons/icon-180.png']
+/* BUILD-INJECTED: scripts/inject-sw-assets.mjs rewrites the two lines below on
+ * every build — the version, so a new deploy gets a fresh cache, and the list
+ * of hashed JS/CSS files, so the app is fully offline after its first load
+ * rather than only after a second visit. */
+const CACHE = 'budget-abroad-e5830ff4'
+const ASSETS = ["./assets/favicon-HV1kWBx1.svg","./assets/icon-180-DdsUQNjL.png","./assets/index-CpXJoUoW.js","./assets/index-DUiV7Yu9.css","./assets/manifest-Cu_DhutZ.webmanifest"]
+
+const SHELL = ['./', './index.html', './manifest.webmanifest', './favicon.svg', './icons/icon-180.png', ...ASSETS]
 
 self.addEventListener('install', event => {
   event.waitUntil(
